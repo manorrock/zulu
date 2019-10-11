@@ -1,7 +1,7 @@
 FROM manorrock/raspbian:arm32v6
 RUN ["cross-build-start"]
 RUN apt-get update && \
-    apt-get install -y curl tar gzip && \
+    apt-get install -y curl gzip libfreetype6 tar && \
     cd /usr/local && \
     curl --insecure -L -O http://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz && \
     tar xfvz zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz && \
