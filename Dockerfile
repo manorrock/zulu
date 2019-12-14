@@ -1,13 +1,11 @@
 FROM manorrock/raspbian:arm32v6
-RUN ["cross-build-start"]
 RUN apt-get update && \
     apt-get install -y curl gzip libfontconfig1 libfreetype6 tar && \
     cd /usr/local && \
-    curl --insecure -L -O http://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz && \
-    tar xfvz zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz && \
-    mv zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf jdk11.0.4 && \
-    rm zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz && \
+    curl --insecure -L -O https://cdn.azul.com/zulu-embedded/bin/zulu11.35.36-ca-jdk11.0.5-linux_aarch32hf.tar.gz && \
+    tar xfvz zulu11.35.36-ca-jdk11.0.5-linux_aarch32hf.tar.gz && \
+    mv zulu11.35.36-ca-jdk11.0.5-linux_aarch32hf zulu11.0.5 && \
+    rm zulu11.35.36-ca-jdk11.0.5-linux_aarch32hf.tar.gz && \
     rm -rf /var/lib/apt/lists/* 
-ENV PATH=$PATH:/usr/local/jdk11.0.4/bin
+ENV PATH=$PATH:/usr/local/zulu11.0.5/bin
 WORKDIR /mnt
-RUN ["cross-build-end"]
