@@ -1,4 +1,5 @@
 FROM manorrock/raspbian:arm32v6
+RUN ["cross-build-start"]
 RUN apt-get update && \
     apt-get install -y curl gzip libfontconfig1 libfreetype6 tar && \
     cd /usr/local && \
@@ -9,3 +10,4 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* 
 ENV PATH=$PATH:/usr/local/zulu11.0.5/bin
 WORKDIR /mnt
+RUN ["cross-build-end"]
