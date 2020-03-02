@@ -2,9 +2,8 @@
 
 ## Important
 
-As of January 18th, 2019 this repository will only update the ARM32v6 images.
-For the amd64 images please go to the official Docker repositories available
-[here](https://hub.docker.com/u/azul).
+This repository has been deprecated. For official Zulu images go to 
+[Docker Hub](https://hub.docker.com/u/azul).
 
 There are several ways to use this container. A couple of examples are illustrated below:
 
