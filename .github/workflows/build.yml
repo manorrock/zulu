@@ -20,7 +20,7 @@ jobs:
     - name: Build arm32v6 image
       run: |
         export DOCKER_CLI_EXPERIMENTAL=enabled
-        docker buildx build --platform linux/arm/v6 -f Dockerfile.armk32v6 -t manorrock/zulu:arm32v6-latest .
+        docker buildx build --platform linux/arm/v6 -f Dockerfile.arm32v6 -t manorrock/zulu:arm32v6-latest .
         docker push manorrock/zulu:arm32v6-latest
     - name: Push Docker manifest
       run: |
